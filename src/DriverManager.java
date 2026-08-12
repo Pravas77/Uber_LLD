@@ -21,8 +21,8 @@ public class DriverManager {
     }
 
     public Driver searchDriver(City city,Location from,VehicleType vehicleType){
-        List<Driver> drivers = driverMap.getOrDefault(city,new ArrayList<>());
-        ReentrantLock lock = reentrantLockMap.get(city);
+        List<Driver> drivers = driverMap.computeIfAbsent(city,k -> new CopyOnWriteArrayList<>());
+        ReentrantLock lock = reentrantLockMap.computeIfAbsent(city,k -> new ReentrantLock());
         lock.lock();
 
         try {

@@ -1,10 +1,10 @@
 public class Trip {
-    public Driver driver;
-    public Rider rider;
-    public double price;
-    public TripStatus tripStatus;
-    public Location from;
-    public Location to;
+    private Driver driver;
+    private Rider rider;
+    private double price;
+    private TripStatus tripStatus;
+    private Location from;
+    private Location to;
 
     @Override
     public String toString() {
