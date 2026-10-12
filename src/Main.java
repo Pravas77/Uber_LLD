@@ -51,7 +51,7 @@ public class Main {
 
 
         Thread thread2 = new Thread(() -> {
-            Trip trip = uber.bookTrip(rider3, new Location(0, 0), new Location(6, 8), VehicleType.BIKE);
+            Trip trip = uber.bookTrip(rider2, new Location(0, 0), new Location(6, 8), VehicleType.BIKE);
 
             System.out.println(trip);
         });
